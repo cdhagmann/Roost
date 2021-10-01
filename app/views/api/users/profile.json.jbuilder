@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 json.links do
   json.self api_rooster_url(@user)
   json.list api_roosters_url
   json.update do
-    json.method "PUT"
+    json.method 'PUT'
     json.href api_rooster_url(@user)
   end
   json.delete do
-    json.method "DELETE"
+    json.method 'DELETE'
     json.href api_rooster_url(@user)
   end
 end

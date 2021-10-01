@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 json.data do
-  json.type "followers"
+  json.type 'followers'
   json.id @follower.id
   json.attributes do
     json.user_id @follower.follower_id
@@ -20,11 +22,11 @@ json.data do
     json.self api_rooster_follower_path(@user, @follower.follower_id)
     json.list api_rooster_followers_path
     json.update do
-      json.method "PUT"
+      json.method 'PUT'
       json.href api_rooster_follower_path(@user, @follower.follower_id)
     end
     json.delete do
-      json.method "DELETE"
+      json.method 'DELETE'
       json.href api_rooster_follower_path(@user, @follower.follower_id)
     end
   end

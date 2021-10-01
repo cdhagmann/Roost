@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.array! @favorites do |favorite|
   json.attributes do
     json.user_id favorite.user_id

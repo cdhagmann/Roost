@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 json.links do
   json.self api_rooster_cluck_url(@post.user.id, @post.id)
   json.list api_rooster_clucks_url(@post.user.id)
   json.delete do
-    json.method "DELETE"
+    json.method 'DELETE'
     json.href api_rooster_cluck_url(@post.user.id, @post.id)
   end
 end

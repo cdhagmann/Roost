@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.links do
   json.self api_rooster_url(user)
 end

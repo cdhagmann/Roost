@@ -1,14 +1,17 @@
-class API::SessionsController < ApplicationController
-  skip_before_action :verify_authentication
+# frozen_string_literal: true
 
-  def create
-    user = User.find_by_username(params[:username])
+module API
+  class SessionsController < ApplicationController
+    skip_before_action :verify_authentication
 
-    if user && user.authenticate(params[:password])
-      render json: {token: user.api_token}
-    else
-      render json: {error: "Invalid"}, status: :unauthorized
+    def create
+      user = User.find_by_username(params[:username])
+
+      if user&.authenticate(params[:password])
+        render json: { token: user.api_token }
+      else
+        render json: { error: 'Invalid' }, status: :unauthorized
+      end
     end
   end
-
 end

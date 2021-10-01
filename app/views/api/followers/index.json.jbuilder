@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.array! @followers do |follower|
   json.attributes do
     json.user_id follower.follower_id

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 json.data do
-  json.type "favorites"
+  json.type 'favorites'
   json.id @favorite.id
   json.attributes do
     json.user_id @favorite.user_id
@@ -20,7 +22,7 @@ json.data do
     json.self api_rooster_cluck_favorites_path(@favorite.post.user, @favorite.post_id)
     json.list api_rooster_cluck_favorites_path
     json.delete do
-      json.method "DELETE"
+      json.method 'DELETE'
       json.href api_rooster_cluck_favorites_path(@favorite.post.user, @favorite.post_id)
     end
   end

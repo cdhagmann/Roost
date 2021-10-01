@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 json.data do
-  json.type "posts"
+  json.type 'posts'
   json.id post.id
   json.attributes do
     json.user_id post.user_id
@@ -13,7 +15,7 @@ json.data do
         json.username post.user.username
       end
       json.links do
-          json.self api_rooster_path(post.user)
+        json.self api_rooster_path(post.user)
       end
     end
   end
@@ -21,7 +23,7 @@ json.data do
     json.self api_rooster_cluck_url(post.user, post)
     json.list api_rooster_clucks_url(post.user)
     json.delete do
-      json.method "DELETE"
+      json.method 'DELETE'
       json.href api_rooster_cluck_url(post.user, post)
     end
   end
